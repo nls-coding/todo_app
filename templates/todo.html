@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>ようこそ {{ username }} さん！</h2>
+
+<h3>タスクの追加</h3>
+<form method="POST" action="/todo">
+    <label>タスク名:</label><br>
+    <input type="text" name="task"><br><br>
+    <input type="submit" value="タスクを追加">
+</form>
+
+<h3>ToDoリスト</h3>
+<ul>
+    {% for task in tasks %}
+    <li>{{ task }} <a href="/todo/delete/{{ loop.index }}">削除</a></li>
+    {% else %}
+    <li>タスクはありません</li>
+    {% endfor %}
+</ul>
+
+<a href="/logout">ログアウト</a>
+{% endblock %}
