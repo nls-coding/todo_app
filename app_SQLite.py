@@ -1,12 +1,12 @@
 import sqlite3
 from flask import Flask, render_template, request, redirect, url_for, session
 
-app = Flask(__name__)
+app = Flask(__name__) #Flask() は クラス 
 app.secret_key = 'your_secret_key'
 
 # SQLiteデータベース接続
 def get_db():
-    conn = sqlite3.connect('todo_app.db')
+    conn = sqlite3.connect('todo_app.db') #SQLiteデータベースファイルに接続
     conn.row_factory = sqlite3.Row  # クエリ結果を辞書型で返す
     return conn
 
