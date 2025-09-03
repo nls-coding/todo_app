@@ -1,0 +1,10 @@
+venv/
+# Python venv
+venv/
+.venv/
+env/
+**/venv/
+**/.venv/
+
+# プロジェクト固有
+nls/todo_app/venv/
